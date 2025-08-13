@@ -1,153 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YOOW - Echoes from the Hills</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    body {
-        background-image: url('background.jpg'); /* Changed background image */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: white;
-    }
-
-    header {
-        background-color: rgba(0, 0, 0, 0.6);
-        padding: 1rem;
-        text-align: center;
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    nav {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 0.5rem;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    nav a:hover {
-        text-decoration: underline;
-    }
-
-    .hero {
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0.4);
-        padding: 2rem;
-    }
-
-    .hero h2 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        max-width: 600px;
-    }
-
-    .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        padding: 2rem;
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    .product {
-        background-color: white;
-        color: black;
-        padding: 1rem;
-        border-radius: 10px;
-        text-align: center;
-    }
-
-    .product img {
-        max-width: 100%;
-        border-radius: 10px;
-    }
-
-    .product h3 {
-        margin: 1rem 0 0.5rem;
-    }
-
-    .product p {
-        margin-bottom: 1rem;
-    }
-
-    footer {
-        background-color: rgba(0, 0, 0, 0.8);
-        text-align: center;
-        padding: 1rem;
-    }
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOOW 2.0 - Echoes of the Hills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2a6c;
+            --secondary: #b21f1f;
+            --accent: #ffd700;
+            --light: #f8f9fa;
+            --dark: #0d1b4a;
+            --text: #333;
+            --gray: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: white;
+            color: var(--text);
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-top: 25px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .grid-item {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .highlight {
+            background-color: rgba(255, 215, 0, 0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--dark));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .structure {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: monospace;
+            line-height: 1.8;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .step-number {
+            background: var(--primary);
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            min-width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .step-content {
+            padding: 20px;
+        }
+        
+        .tip {
+            background: rgba(26, 42, 108, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .screenshot {
+            width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+        
+        .command {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 10px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 5px 0;
+            font-family: monospace;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                min-width: 100%;
+                padding: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>YOOW 2.0 - GitHub Repository Setup</h1>
+            <p style="text-align: center;">Complete guide to structuring your GitHub repository</p>
+        </header>
+        
+        <div class="card">
+            <h2>GitHub Repository Structure</h2>
+            <p>Here's the optimal file structure for your YOOW 2.0 project on GitHub:</p>
+            
+            <div class="structure">
+                YOOW2.0/<br>
+                ├── index.html           # Main HTML file<br>
+                ├── styles.css          # CSS stylesheet<br>
+                ├── script.js           # JavaScript functionality<br>
+                ├── assets/             # Folder for images<br>
+                │   ├── hero-bg.jpg<br>
+                │   ├── traditional.jpg<br>
+                │   ├── modern.jpg<br>
+                │   └── accessories.jpg<br>
+                ├── LICENSE             # License file<br>
+                └── README.md           # Project documentation
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Step-by-Step Setup Guide</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Create GitHub Repository</h3>
+                    <p>Create a new repository named "YOOW2.0" on GitHub.</p>
+                    <p class="command">https://github.com/new</p>
+                    <div class="tip">
+                        <strong>Tip:</strong> Initialize with a README file and add a .gitignore file for "Node" if you plan to add JavaScript dependencies later.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Clone Repository Locally</h3>
+                    <p>Clone the repository to your local machine:</p>
+                    <div class="code-block">
+                        git clone https://github.com/&lt;your-username&gt;/YOOW2.0.git<br>
+                        cd YOOW2.0
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Create File Structure</h3>
+                    <p>Create the necessary files and folders:</p>
+                    <div class="code-block">
+                        touch index.html styles.css script.js<br>
+                        mkdir assets<br>
+                        touch README.md LICENSE
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Add Content to Files</h3>
+                    <p>Copy your HTML, CSS, and JavaScript code into the respective files:</p>
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h3>index.html</h3>
+                            <p>Main HTML structure of your website</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>styles.css</h3>
+                            <p>All CSS styles and design rules</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>script.js</h3>
+                            <p>JavaScript for cart functionality and interactions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Add Image Assets</h3>
+                    <p>Download your images and place them in the assets folder:</p>
+                    <div class="code-block">
+                        assets/<br>
+                        ├── hero-bg.jpg<br>
+                        ├── traditional.jpg<br>
+                        ├── modern.jpg<br>
+                        └── accessories.jpg
+                    </div>
+                    <div class="tip">
+                        <strong>Tip:</strong> Update image paths in your HTML to point to local assets (e.g., 'assets/hero-bg.jpg')
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h3>Create README.md</h3>
+                    <p>Add a professional README with:</p>
+                    <ul>
+                        <li>Project description</li>
+                        <li>Features list</li>
+                        <li>Setup instructions</li>
+                        <li>Screenshots</li>
+                        <li>License information</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <h3>Commit and Push</h3>
+                    <p>Push your code to GitHub:</p>
+                    <div class="code-block">
+                        git add .<br>
+                        git commit -m "Initial commit with YOOW 2.0 website"<br>
+                        git push origin main
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                    <h3>Enable GitHub Pages</h3>
+                    <p>Go to repository settings → Pages → Select main branch and root folder</p>
+                    <p>Your site will be live at:</p>
+                    <p class="highlight">https://&lt;your-username&gt;.github.io/YOOW2.0/</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Essential Files Explained</h2>
+            
+            <div class="section">
+                <h3>index.html</h3>
+                <p>The main HTML file with your website structure:</p>
+                <div class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;YOOW - Echoes of the Hills&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;!-- Google Fonts --&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"&gt;
+    &lt;!-- Font Awesome --&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Header and Navigation --&gt;
+    &lt;header&gt;...&lt;/header&gt;
+    
+    &lt;!-- Hero Section --&gt;
+    &lt;section class="hero"&gt;...&lt;/section&gt;
+    
+    &lt;!-- Product Categories --&gt;
+    &lt;section class="categories"&gt;...&lt;/section&gt;
+    
+    &lt;!-- Featured Products --&gt;
+    &lt;section class="products"&gt;...&lt;/section&gt;
+    
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>styles.css</h3>
+                <p>Your CSS styles with variables for consistent branding:</p>
+                <div class="code-block">
+:root {
+    --primary: #1a2a6c;
+    --secondary: #b21f1f;
+    --accent: #ffd700;
+    --light: #f8f9fa;
+    --dark: #0d1b4a;
+    --text: #333;
+    --gray: #666;
+}
 
-<header>
-    <h1>YOOW - Echoes from the Hills</h1>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
-</header>
+body {
+    background-color: white;
+    color: var(--text);
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+}
 
-<section class="hero">
-    <h2>Discover Unique Khasi Fashion</h2>
-    <p>Handcrafted apparel inspired by the culture and heritage of the Khasi Hills.</p>
-</section>
+/* Header styles */
+header {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-<section class="products">
-    <div class="product">
-        <img src="https://via.placeholder.com/250x250" alt="Product 1">
-        <h3>Traditional Shawl</h3>
-        <p>$40</p>
-        <button>Add to Cart</button>
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('assets/hero-bg.jpg') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ... other styles ... */
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>script.js</h3>
+                <p>JavaScript for cart functionality and interactions:</p>
+                <div class="code-block">
+// Cart functionality
+let cartCount = 0;
+let cartItems = [];
+
+function addToCart(productName, price) {
+    cartCount++;
+    cartItems.push({name: productName, price: price});
+    document.querySelector('.cart-count').textContent = cartCount;
+    alert(`${productName} added to cart! (₹${price})`);
+}
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>README.md</h3>
+                <p>A professional README template:</p>
+                <div class="code-block">
+# YOOW 2.0 - Echoes of the Hills
+
+[![Live Demo](https://img.shields.io/badge/Demo-Live-green)](https://your-username.github.io/YOOW2.0/)
+[![GitHub License](https://img.shields.io/github/license/your-username/YOOW2.0)](LICENSE)
+
+E-commerce platform showcasing Northeast India's cultural heritage through authentic fashion.
+
+## Features
+- Responsive design
+- Product categories
+- Shopping cart
+- Modern UI
+
+## Setup
+```bash
+git clone https://github.com/your-username/YOOW2.0.git
+cd YOOW2.0
+# Open index.html in browser
+    <div class="card">
+        <h2>GitHub Pages Deployment</h2>
+        <p>GitHub Pages provides free hosting for your static website:</p>
+        
+        <div class="grid">
+            <div class="grid-item">
+                <h3>Enable GitHub Pages</h3>
+                <p>Go to repository settings → Pages → Select main branch and root folder</p>
+            </div>
+            <div class="grid-item">
+                <h3>Custom Domain</h3>
+                <p>Add a CNAME file with your domain name for custom URLs</p>
+            </div>
+            <div class="grid-item">
+                <h3>Automatic Updates</h3>
+                <p>Every push to main branch automatically updates the live site</p>
+            </div>
+        </div>
+        
+        <p class="tip">
+            <strong>Note:</strong> Your site will be available at:<br>
+            <span class="highlight">https://&lt;your-username&gt;.github.io/YOOW2.0/</span>
+        </p>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="#" class="btn">View Live Demo</a>
+            <a href="#" class="btn">GitHub Repository</a>
+        </div>
     </div>
-    <div class="product">
-        <img src="https://via.placeholder.com/250x250" alt="Product 2">
-        <h3>Khasi Inspired Jacket</h3>
-        <p>$60</p>
-        <button>Add to Cart</button>
-    </div>
-    <div class="product">
-        <img src="https://via.placeholder.com/250x250" alt="Product 3">
-        <h3>Handwoven Bag</h3>
-        <p>$25</p>
-        <button>Add to Cart</button>
-    </div>
-</section>
+    
+    <footer style="text-align: center; padding: 30px 0; color: var(--gray); margin-top: 50px;">
+        <p>YOOW 2.0 - Echoes of the Hills | Cultural Heritage E-commerce</p>
+        <p>Hosted entirely on GitHub Pages</p>
+    </footer>
+</div>
 
-<footer>
-    <p>&copy; 2025 YOOW. All rights reserved.</p>
-</footer>
-
-</body>
-</html>
+<script>
+    // Simple animation for step elements
+    document.addEventListener('DOMContentLoaded', function() {
+        const steps = document.querySelectorAll('.step');
+        
+        steps.forEach((step, index) => {
+            setTimeout(() => {
+                step.style.opacity = '1';
+                step.style.transform = 'translateY(0)';
+            }, 300 * index);
+        });
+        
+        // Initial state for animation
+        steps.forEach(step => {
+            step.style.opacity = '0';
+            step.style.transform = 'translateY(20px)';
+            step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+    });
+</script>
