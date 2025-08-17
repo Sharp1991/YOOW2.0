@@ -1,0 +1,16 @@
+:root {
+  --primary: #2e8b57;      /* Sustainable green */
+  --secondary: #f5f5dc;    /* Beige for warmth */
+  --accent: #d4af37;       /* Gold accent */
+  --dark: #1a1a1a;         /* Dark text */
+  --light: #ffffff;        /* Light background */
+}
+
+body {
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+}
+
+.logo {
+  max-width: 150px;
+  margin: 0 auto;
+}
