@@ -1,222 +1,145 @@
-// Mobile Menu Toggle
-document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-    document.querySelector('nav ul').classList.toggle('show');
-});
-
-// Sample Product Data
+// Sample product data
 const products = [
     {
-        id: "PROD001",
-        name: "Nike Air Max 90",
-        price: "₹3,200",
-        size: "US 9",
-        condition: "Excellent",
-        category: "shoes",
-        image: "nike-airmax.jpg"
-    },
-    {
-        id: "PROD002",
-        name: "Levi's 501 Jeans",
-        price: "₹1,800",
-        size: "32W",
-        condition: "Good",
-        category: "men",
-        image: "levis-jeans.jpg"
-    },
-    {
-        id: "PROD003",
-        name: "Zara Floral Dress",
-        price: "₹1,200",
-        size: "M",
-        condition: "Excellent",
-        category: "women",
-        image: "zara-dress.jpg"
-    },
-    {
-        id: "PROD004",
-        name: "Tommy Hilfiger Polo",
-        price: "₹1,000",
-        size: "L",
-        condition: "Good",
-        category: "men",
-        image: "tommy-polo.jpg"
-    },
-    {
-        id: "PROD005",
         name: "Vintage Denim Jacket",
-        price: "₹2,200",
-        size: "M",
-        condition: "Fair",
-        category: "vintage",
-        image: "denim-jacket.jpg"
+        price: 24.99,
+        image: "assets/products/jacket.jpg",
+        category: "clothing"
     },
     {
-        id: "PROD006",
-        name: "Adidas Track Pants",
-        price: "₹1,500",
-        size: "S",
-        condition: "Excellent",
-        category: "sportswear",
-        image: "adidas-pants.jpg"
+        name: "Retro Sunglasses",
+        price: 12.50,
+        image: "assets/products/sunglasses.jpg",
+        category: "accessories"
     },
     {
-        id: "PROD007",
-        name: "H&M Kids Jacket",
-        price: "₹800",
-        size: "6-7 Years",
-        condition: "Good",
-        category: "kids",
-        image: "kids-jacket.jpg"
+        name: "Leather Crossbody Bag",
+        price: 32.75,
+        image: "assets/products/bag.jpg",
+        category: "accessories"
     },
     {
-        id: "PROD008",
-        name: "Designer Leather Bag",
-        price: "₹2,800",
-        size: "One Size",
-        condition: "Excellent",
-        category: "accessories",
-        image: "leather-bag.jpg"
+        name: "Floral Summer Dress",
+        price: 18.99,
+        image: "assets/products/dress.jpg",
+        category: "clothing"
     }
 ];
 
-// WhatsApp Business Number
-const whatsappNumber = "919876543210";
-
-// Function to generate WhatsApp link
-function generateWhatsAppLink(product) {
-    const message = `Hi YOOW! I'm interested in ${product.name} (${product.id}). Is this available?`;
-    const encodedMessage = encodeURIComponent(message);
-    return `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-}
-
-// Display products on homepage
-function displayFeaturedProducts() {
-    const container = document.querySelector('.featured-products .products-grid');
-    if (!container) return;
+// Load products on homepage
+document.addEventListener('DOMContentLoaded', function() {
+    const productGrid = document.querySelector('.product-grid');
     
-    // Show only 4 products on homepage
-    const featuredProducts = products.slice(0, 4);
-    
-    container.innerHTML = featuredProducts.map(product => `
-        <div class="product-card" data-category="${product.category}">
-            <div class="product-image">
-                <i class="fas fa-tshirt"></i>
-            </div>
-            <div class="product-info">
-                <h3>${product.name}</h3>
-                <p class="product-price">${product.price}</p>
-                <p class="product-details">Size: ${product.size} | Condition: ${product.condition}</p>
-                <a href="${generateWhatsAppLink(product)}" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Chat to Buy
-                </a>
-            </div>
-        </div>
-    `).join('');
-}
-
-// Display products on catalogue page
-function displayCatalogueProducts() {
-    const container = document.getElementById('products-container');
-    if (!container) return;
-    
-    container.innerHTML = products.map(product => `
-        <div class="product-card" data-category="${product.category}">
-            <div class="product-image">
-                <i class="fas fa-tshirt"></i>
-            </div>
-            <div class="product-info">
-                <h3>${product.name}</h3>
-                <p class="product-price">${product.price}</p>
-                <p class="product-details">Size: ${product.size} | Condition: ${product.condition}</p>
-                <a href="${generateWhatsAppLink(product)}" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
-                </a>
-            </div>
-        </div>
-    `).join('');
-}
-
-// Filter products by category
-function setupFilterButtons() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            const category = button.dataset.category;
-            
-            // Filter products
-            productCards.forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-}
-
-// Search functionality
-function setupSearch() {
-    const searchInput = document.getElementById('search-input');
-    const searchButton = document.getElementById('search-btn');
-    const productCards = document.querySelectorAll('.product-card');
-    
-    function performSearch() {
-        const searchTerm = searchInput.value.toLowerCase();
+    if(productGrid) {
+        // Display first 4 products as featured items
+        const featuredProducts = products.slice(0, 4);
         
-        productCards.forEach(card => {
-            const productName = card.querySelector('h3').textContent.toLowerCase();
-            if (productName.includes(searchTerm)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+        featuredProducts.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.className = 'product-card';
+            productElement.innerHTML = `
+                <div class="product-image-container">
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-overlay">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p class="product-price">$${product.price.toFixed(2)}</p>
+                </div>
+            `;
+            productGrid.appendChild(productElement);
         });
     }
-    
-    searchInput.addEventListener('keyup', performSearch);
-    searchButton.addEventListener('click', performSearch);
-}
 
-// Contact form submission
-function setupContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    if (!contactForm) return;
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
-        
-        // In a real application, you would send this data to a server
-        console.log('Form submitted:', formData);
-        
-        // Show success message
-        alert('Thank you for your message! We will get back to you soon.');
-        
-        // Reset form
-        contactForm.reset();
-    });
-}
-
-// Initialize the page
-document.addEventListener('DOMContentLoaded', function() {
-    displayFeaturedProducts();
-    displayCatalogueProducts();
-    setupFilterButtons();
-    setupSearch();
-    setupContactForm();
+    // Newsletter form handling
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if(newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            alert(`Thank you for subscribing with ${email}! You'll receive 10% off your first purchase.`);
+            this.reset();
+        });
+    }
 });
+
+// Add this CSS for the product cards
+const productCardCSS = `
+.product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-overlay {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    background: rgba(42, 63, 84, 0.8);
+    padding: 15px;
+    transition: bottom 0.3s;
+    text-align: center;
+}
+
+.product-card:hover .product-overlay {
+    bottom: 0;
+}
+
+.quick-view {
+    background: var(--secondary);
+    color: var(--dark);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+.product-price {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+`;
+
+// Inject the product card CSS
+const styleElement = document.createElement('style');
+styleElement.innerHTML = productCardCSS;
+document.head.appendChild(styleElement);
