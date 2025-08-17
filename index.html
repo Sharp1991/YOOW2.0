@@ -3,70 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOOW Thrift Shop - Preloved Fashion</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Add Font Awesome for icons -->
+    <title>YOOW Thrift Shop - Premium Preloved Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>YOOW</h1>
-        <p>Thrift Shop</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="YOOW Thrift Shop">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="catalogue.html">Shop</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://wa.me/YOURPHONENUMBER" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Curated Preloved Fashion</h1>
+            <p class="tagline">Where Second Hand Becomes First Choice</p>
+            <p class="subtitle">Hygienic • High-Quality • Affordable</p>
+            <a href="catalogue.html" class="cta-button">Browse Collection</a>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>Curated Preloved Fashion</h2>
-            <p class="tagline">Where Second Hand becomes first choice</p>
-            <p class="subtag">Hygienic, High-Quality, Affordable Fashion</p>
-            <a href="shop.html" class="cta-button">Browse Collection</a>
-        </section>
-
-        <section class="benefits">
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
             <div class="benefit-card">
-                <i class="fas fa-leaf"></i>
+                <div class="benefit-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
                 <h3>Eco-friendly Fashion</h3>
                 <p>Reduce waste with preloved quality items that help the planet</p>
             </div>
             
             <div class="benefit-card">
-                <i class="fas fa-calendar-day"></i>
+                <div class="benefit-icon">
+                    <i class="fas fa-calendar-day"></i>
+                </div>
                 <h3>Daily New Arrivals</h3>
                 <p>Fresh items added every day - always something new to discover</p>
             </div>
             
             <div class="benefit-card">
-                <i class="fas fa-check-circle"></i>
+                <div class="benefit-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
                 <h3>Quality Inspected</h3>
                 <p>Every item is hygienic & carefully selected for quality</p>
             </div>
-            
-            <div class="benefit-card">
-                <i class="fab fa-whatsapp"></i>
-                <h3>WhatsApp Direct Buying</h3>
-                <p>Chat instantly to purchase your favorite items</p>
-                <a href="https://wa.me/YOURPHONENUMBER" class="whatsapp-button">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                </a>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="new-arrivals">
+    <!-- New Arrivals Preview -->
+    <section class="new-arrivals">
+        <div class="container">
             <h2>New Arrivals</h2>
-            <!-- Product items will go here -->
-        </section>
-    </main>
+            <div class="product-grid">
+                <!-- Products will be loaded via JavaScript -->
+            </div>
+            <a href="catalogue.html" class="view-all">View All Products →</a>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2023 YOOW Thrift Shop. All rights reserved.</p>
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>Get 10% Off Your First Purchase</h3>
+            <p>Subscribe to our newsletter for exclusive deals</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="YOOW Thrift Shop">
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="catalogue.html">All Products</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> (123) 456-7890</a></li>
+                        <li><a href="mailto:info@yoowthrift.com"><i class="fas fa-envelope"></i> info@yoowthrift.com</a></li>
+                        <li><a href="https://wa.me/YOURPHONENUMBER"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 YOOW Thrift Shop. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
