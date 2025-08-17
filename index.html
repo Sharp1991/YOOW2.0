@@ -1,38 +1,124 @@
-<header>
-  <img src="yoow-logo.svg" alt="YOOW Secondhand Fashion" class="logo">
-  <h1>Curated Preloved Fashion</h1>
-  <p class="tagline">Where Second Hands becomes first choice</p>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOOW - Where Second Hands Become First Choice</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <h1>YOOW</h1>
+                <span>Thrift Shop</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogue.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <h2>Hygienic, High-Quality, Affordable Fashion</h2>
-    <a href="catalogue.html" class="cta-button">Browse Collection</a>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Curated Preloved Fashion</h2>
+                <p class="tagline">Where Second Hands becomes first choice</p>
+                <p class="sub-headline">Hygienic, High-Quality, Affordable Fashion</p>
+                <a href="catalogue.html" class="btn">Browse Collection</a>
+            </div>
+        </div>
+    </section>
 
-<section class="features">
-  <div class="feature-card">
-    <i>♻️</i>
-    <h3>Eco-friendly Fashion</h3>
-    <p>Reduce waste with preloved quality</p>
-  </div>
-  
-  <div class="feature-card">
-    <i>🆕</i>
-    <h3>Daily New Arrivals</h3>
-    <p>Fresh items added every day</p>
-  </div>
-  
-  <div class="feature-card">
-    <i>✔️</i>
-    <h3>Quality Inspected</h3>
-    <p>Hygienic & carefully selected</p>
-  </div>
-  
-  <div class="feature-card">
-    <i>💬</i>
-    <h3>WhatsApp Direct Buying</h3>
-    <p>Chat instantly to purchase</p>
-  </div>
-</section>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Eco-friendly Fashion</h3>
+                <p>Reduce waste with preloved quality items that help the planet</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-calendar-plus"></i>
+                </div>
+                <h3>Daily New Arrivals</h3>
+                <p>Fresh items added every day - always something new to discover</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Quality Inspected</h3>
+                <p>Every item is hygienic & carefully selected for quality</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>WhatsApp Direct Buying</h3>
+                <p>Chat instantly to purchase your favorite items</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Preview -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>New Arrivals</h2>
+            <div class="products-grid">
+                <!-- Products will be dynamically loaded from script.js -->
+            </div>
+            <a href="catalogue.html" class="btn">View All Products</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                <h3>YOOW Thrift Shop</h3>
+                <p>Where second hands become first choice. Sustainable, affordable fashion for everyone.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogue.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Visit Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Police Bazar, Shillong</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 10AM-7PM</p>
+                <p><i class="fas fa-envelope"></i> yoow@gmail.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 YOOW Thrift Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
