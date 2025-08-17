@@ -7,7 +7,7 @@
     text-align: center;
     color: #fff;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                url('./assets/background.jpg') no-repeat center center/cover;
+                url('https://raw.githubusercontent.com/Sharp1991/YOOW2.0/main/assets/background.jpg') no-repeat center center/cover;
 }
 .hero h2 {
     font-size: 3rem;
