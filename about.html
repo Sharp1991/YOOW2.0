@@ -4,9 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - YOOW Thrift</title>
-    <!-- Correct CSS link -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome -->
+
+    <!-- Embedded CSS -->
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+            background: #222;
+        }
+
+        .navbar a.logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a.active,
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        /* Hero */
+        .hero {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('assets/background.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 60px 10%;
+        }
+
+        .about-section h2 {
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .about-section p {
+            margin-bottom: 20px;
+        }
+
+        .about-section ul {
+            list-style: none;
+        }
+
+        .about-section ul li {
+            margin: 10px 0;
+            color: #444;
+        }
+
+        .about-section ul li i {
+            color: #28a745;
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 10%;
+        }
+
+        footer .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        footer .social-links a:hover {
+            color: #ffcc00;
+        }
+    </style>
+
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -32,37 +149,33 @@
 
     <!-- About Content -->
     <section class="about-section">
-        <div class="container">
-            <h2>Who We Are</h2>
-            <p>
-                At <strong>YOOW Thrift</strong>, we believe fashion should be stylish, affordable, and sustainable. 
-                Our store offers carefully selected pre-loved clothing that is hygienic, safe, and trendy.
-            </p>
+        <h2>Who We Are</h2>
+        <p>
+            At <strong>YOOW Thrift</strong>, we believe fashion should be stylish, affordable, and sustainable. 
+            Our store offers carefully selected pre-loved clothing that is hygienic, safe, and trendy.
+        </p>
 
-            <h2>Our Mission</h2>
-            <p>
-                We aim to reduce fashion waste while giving our customers unique pieces they can wear with confidence. 
-                By choosing thrift, you not only save money but also help protect the environment.
-            </p>
+        <h2>Our Mission</h2>
+        <p>
+            We aim to reduce fashion waste while giving our customers unique pieces they can wear with confidence. 
+            By choosing thrift, you not only save money but also help protect the environment.
+        </p>
 
-            <h2>Why Choose Us?</h2>
-            <ul>
-                <li><i class="fa fa-check-circle"></i> Affordable & fashionable clothing</li>
-                <li><i class="fa fa-check-circle"></i> Hygienic & carefully curated items</li>
-                <li><i class="fa fa-check-circle"></i> Sustainable shopping choice</li>
-            </ul>
-        </div>
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li><i class="fa fa-check-circle"></i> Affordable & fashionable clothing</li>
+            <li><i class="fa fa-check-circle"></i> Hygienic & carefully curated items</li>
+            <li><i class="fa fa-check-circle"></i> Sustainable shopping choice</li>
+        </ul>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 YOOW Thrift. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
+        <p>&copy; 2025 YOOW Thrift. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
 
