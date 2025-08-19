@@ -1,162 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - YOOW Thrift</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - YOOW Thrift</title>
+
+  <!-- Force all relative URLs to the GitHub Pages root -->
+  <base href="https://sharp1991.github.io/YOOW2.0/">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">
-                <h1>YOOW</h1>
-                <span>Thrift Shop</span>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="catalogue.html">Shop</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <h1>YOOW</h1>
+        <span>Thrift Shop</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalogue.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
 
-    <section class="contact-hero">
-        <div class="container">
-            <h1>Get In Touch</h1>
-            <p>We'd love to hear from you</p>
-        </div>
-    </section>
+  <section class="contact">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="subtitle">We’d love to hear from you!</p>
 
-    <section class="contact-info">
-        <div class="container">
-            <div class="contact-methods">
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Visit Us</h3>
-                    <p>Police Bazar, Shillong, Meghalaya</p>
-                    <a href="#" class="btn-outline">Get Directions</a>
-                </div>
-                
-                <div class="contact-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Opening Hours</h3>
-                    <p>Monday - Saturday: 10AM - 7PM</p>
-                    <p>Sunday: Closed</p>
-                </div>
-                
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email Us</h3>
-                    <p>yoow@gmail.com</p>
-                    <a href="mailto:yoow@gmail.com" class="btn-outline">Send Message</a>
-                </div>
-            </div>
-            
-            <div class="contact-map">
-                <div class="map-placeholder">
-                    <i class="fas fa-map"></i>
-                    <p>Map of Police Bazar, Shillong</p>
-                </div>
-            </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> Police Bazar, Shillong</p>
+          <p><i class="fas fa-envelope"></i> yoow@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+          <p><i class="fas fa-clock"></i> Mon-Sat: 10AM-7PM</p>
         </div>
-    </section>
 
-    <section class="contact-form-section">
-        <div class="container">
-            <div class="form-container">
-                <h2>Send Us a Message</h2>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
-            
-            <div class="faq">
-                <h2>Frequently Asked Questions</h2>
-                <div class="faq-item">
-                    <h3>How do I donate clothes to YOOW?</h3>
-                    <p>We accept donations during store hours. Please bring clean, gently used clothing to our store in Police Bazar. We'll provide you with a discount coupon for your next purchase as a thank you!</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3>Do you offer consignment?</h3>
-                    <p>Yes! We offer a 50/50 consignment split. Bring your quality items to our store during business hours for evaluation. Items remain in the store for 60 days.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3>What payment methods do you accept?</h3>
-                    <p>We accept cash, UPI, and all major credit/debit cards. Online orders can be paid via UPI or card.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3>Do you ship internationally?</h3>
-                    <p>Currently, we only ship within India. We're working on expanding our shipping options in the future.</p>
-                </div>
-            </div>
+        <div class="contact-form">
+          <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-col">
-                <h3>YOOW Thrift Shop</h3>
-                <p>Where second hands become first choice. Sustainable, affordable fashion for everyone.</p>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="catalogue.html">Shop</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Visit Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Police Bazar, Shillong</p>
-                <p><i class="fas fa-clock"></i> Mon-Sat: 10AM-7PM</p>
-                <p><i class="fas fa-envelope"></i> yoow@gmail.com</p>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2023 YOOW Thrift Shop. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 YOOW Thrift. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
