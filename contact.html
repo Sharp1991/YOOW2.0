@@ -1,67 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - YOOW Thrift</title>
-
-  <!-- Correct CSS -->
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - YOOW Thrift Shop</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body { margin:0; font-family: 'Montserrat', sans-serif; background:#f9f9f9; color:#333; }
+    a { text-decoration:none; color:inherit; }
+
+    /* Navbar */
+    .navbar { background:#fff; border-bottom:1px solid #ddd; padding:10px 0; }
+    .navbar .container { width:90%; margin:auto; display:flex; justify-content:space-between; align-items:center; }
+    .navbar .logo img { height:50px; }
+    .navbar .nav-links { list-style:none; display:flex; gap:20px; }
+    .navbar .nav-links li a { color:#333; font-weight:600; }
+    .navbar .nav-links li a.active,
+    .navbar .nav-links li a:hover { color:#007BFF; }
+
+    /* Hero */
+    .hero { background:url('assets/background.jpg') center/cover no-repeat; padding:80px 20px; text-align:center; color:#fff; }
+    .hero h1 { font-size:2.5rem; margin-bottom:10px; }
+    .hero p { font-size:1.2rem; }
+
+    /* Contact section */
+    .contact-section { width:90%; margin:40px auto; display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+    .contact-info, .contact-form { background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    .contact-info p { margin-bottom:15px; font-size:1rem; }
+    .contact-info i { margin-right:10px; color:#007BFF; }
+    .contact-form input, 
+    .contact-form textarea { width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px; }
+    .contact-form button { width:100%; padding:12px; border:none; background:#007BFF; color:#fff; font-size:1rem; border-radius:5px; cursor:pointer; }
+    .contact-form button:hover { background:#0056b3; }
+
+    /* Footer */
+    .footer { background:#222; color:#fff; padding:40px 20px 20px; }
+    .footer .container { width:90%; margin:auto; display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between; }
+    .footer-logo img { height:50px; }
+    .footer-links { display:flex; gap:40px; }
+    .footer-column h4 { margin-bottom:10px; }
+    .footer-column ul { list-style:none; padding:0; }
+    .footer-column ul li { margin-bottom:8px; }
+    .footer-column ul li a { color:#fff; font-size:0.9rem; }
+    .footer-column ul li a:hover { text-decoration:underline; }
+    .copyright { text-align:center; padding-top:20px; border-top:1px solid #444; font-size:0.85rem; margin-top:20px; }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .contact-section { grid-template-columns:1fr; }
+      .navbar .nav-links { flex-direction:column; gap:10px; }
+      .footer .container { flex-direction:column; }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navigation -->
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo">YOOW Thrift</a>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="assets/logo.png" alt="YOOW Thrift"></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="catalogue.html">Shop</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero small-hero">
+  <!-- Hero -->
+  <section class="hero">
     <h1>Contact Us</h1>
     <p>We’d love to hear from you!</p>
   </section>
 
-  <!-- Contact Content -->
+  <!-- Contact Section -->
   <section class="contact-section">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> Police Bazar, Shillong</p>
-          <p><i class="fas fa-envelope"></i> yoow@gmail.com</p>
-          <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-          <p><i class="fas fa-clock"></i> Mon–Sat: 10AM–7PM</p>
-        </div>
-
-        <div class="contact-form">
-          <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-          </form>
-        </div>
-      </div>
+    <div class="contact-info">
+      <p><i class="fas fa-map-marker-alt"></i> Police Bazar, Shillong</p>
+      <p><i class="fas fa-envelope"></i> yoow@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fas fa-clock"></i> Mon–Sat: 10AM–7PM</p>
+    </div>
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 YOOW Thrift. All rights reserved.</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+      <div class="footer-logo">
+        <img src="assets/logo.png" alt="YOOW Thrift Shop">
       </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="catalogue.html">All Products</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Best Sellers</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> (123) 456-7890</a></li>
+            <li><a href="mailto:info@yoowthrift.com"><i class="fas fa-envelope"></i> info@yoowthrift.com</a></li>
+            <li><a href="https://wa.me/YOURPHONENUMBER"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 YOOW Thrift Shop. All rights reserved.</p>
     </div>
   </footer>
 
