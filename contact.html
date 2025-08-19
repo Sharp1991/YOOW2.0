@@ -1,29 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - YOOW Thrift</title>
+  <style>
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
-  <!-- CSS with cache-busting -->
-  <link rel="stylesheet" href="https://sharp1991.github.io/YOOW2.0/style.css?v=2">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    body { background: #f8f8f8; color: #333; line-height: 1.6; }
+
+    .container { max-width: 1000px; margin: auto; padding: 20px; }
+
+    header { background: #222; color: #fff; padding: 15px 0; }
+    header .logo h1 { display: inline-block; margin-right: 10px; }
+    header .logo span { font-size: 0.9rem; color: #aaa; }
+    nav ul { list-style: none; display: flex; justify-content: flex-end; }
+    nav ul li { margin-left: 20px; }
+    nav ul li a { color: #fff; text-decoration: none; }
+    nav ul li a.active { text-decoration: underline; }
+
+    h1 { text-align: center; margin-bottom: 10px; }
+    .subtitle { text-align: center; margin-bottom: 30px; color: #555; }
+
+    .contact-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+    .contact-info, .contact-form { flex: 1; background: #fff; padding: 20px; border-radius: 8px; }
+
+    .contact-info p { margin-bottom: 15px; font-size: 1rem; }
+    .contact-info i { margin-right: 10px; color: #222; }
+
+    .contact-form input, 
+    .contact-form textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+
+    .contact-form button { padding: 10px 20px; border: none; background: #222; color: #fff; border-radius: 5px; cursor: pointer; }
+    .contact-form button:hover { background: #555; }
+
+    footer { background: #222; color: #fff; text-align: center; padding: 15px 0; margin-top: 30px; }
+    .social-links a { color: #fff; margin: 0 10px; text-decoration: none; }
+  </style>
 </head>
 <body>
+
   <header>
     <div class="container">
-      <a href="https://sharp1991.github.io/YOOW2.0/index.html" class="logo">
+      <a href="#" class="logo">
         <h1>YOOW</h1><span>Thrift Shop</span>
       </a>
       <nav>
         <ul>
-          <li><a href="https://sharp1991.github.io/YOOW2.0/index.html">Home</a></li>
-          <li><a href="https://sharp1991.github.io/YOOW2.0/catalogue.html">Shop</a></li>
-          <li><a href="https://sharp1991.github.io/YOOW2.0/about.html">About</a></li>
-          <li><a class="active" href="https://sharp1991.github.io/YOOW2.0/contact.html">Contact</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a class="active" href="#">Contact</a></li>
         </ul>
       </nav>
-      <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
     </div>
   </header>
 
@@ -34,10 +64,10 @@
 
       <div class="contact-grid">
         <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> Police Bazar, Shillong</p>
-          <p><i class="fas fa-envelope"></i> yoow@gmail.com</p>
-          <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-          <p><i class="fas fa-clock"></i> Mon–Sat: 10AM–7PM</p>
+          <p>📍 Police Bazar, Shillong</p>
+          <p>✉ yoow@gmail.com</p>
+          <p>📞 +91 98765 43210</p>
+          <p>⏰ Mon–Sat: 10AM–7PM</p>
         </div>
 
         <div class="contact-form">
@@ -45,7 +75,7 @@
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
             <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
+            <button type="submit">Send Message</button>
           </form>
         </div>
       </div>
@@ -56,11 +86,12 @@
     <div class="container">
       <p>&copy; 2025 YOOW Thrift. All rights reserved.</p>
       <div class="social-links">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
       </div>
     </div>
   </footer>
+
 </body>
 </html>
