@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - YOOW Thrift</title>
 
-  <!-- Use full GitHub Pages path to ensure CSS loads -->
-  <link rel="stylesheet" href="https://sharp1991.github.io/YOOW2.0/style.css">
+  <!-- ✅ Correct raw GitHub CSS link -->
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/Sharp1991/YOOW2.0/main/style.css">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- Header / Navigation -->
   <header>
     <div class="container">
       <a href="index.html" class="logo">
-        <h1>YOOW</h1>
-        <span>Thrift Shop</span>
+        <h1>YOOW</h1><span>Thrift Shop</span>
       </a>
       <nav>
         <ul>
@@ -26,42 +25,34 @@
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
-      <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
     </div>
   </header>
 
-  <!-- Hero Section (matching homepage style) -->
-  <section class="hero small-hero">
-    <h1>Contact Us</h1>
-    <p>We’d love to hear from you!</p>
-  </section>
-
-  <!-- Contact Section -->
   <section class="contact">
-    <div class="container contact-grid">
-      
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <p><i class="fas fa-map-marker-alt"></i> Police Bazar, Shillong</p>
-        <p><i class="fas fa-envelope"></i> yoow@gmail.com</p>
-        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-        <p><i class="fas fa-clock"></i> Mon–Sat: 10AM–7PM</p>
-      </div>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="subtitle">We’d love to hear from you!</p>
 
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <form>
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <textarea placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> Police Bazar, Shillong</p>
+          <p><i class="fas fa-envelope"></i> yoow@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+          <p><i class="fas fa-clock"></i> Mon–Sat: 10AM–7PM</p>
+        </div>
 
+        <div class="contact-form">
+          <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; 2025 YOOW Thrift. All rights reserved.</p>
@@ -72,6 +63,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>
